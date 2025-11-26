@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Админка СЗДР 25 — Официальный доступ</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('hzdr.jpg') center/cover fixed no-repeat;
+      color: #000;
+      line-height: 1.6;
+    }
+
+    /* Полупрозрачный затемнённый оверлей поверх фона — как в твоих предпочтениях */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 30, 70, 0.35); /* чуть синеватое затемнение */
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 0;
+      color: white;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      opacity: 0.9;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
+      border-radius: 12px;
+      padding: 30px;
+      margin: 30px 0;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: #003366;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #0055aa;
+      padding-bottom: 8px;
+    }
+
+    ul {
+      padding-left: 25px;
+      margin: 15px 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #0055aa;
+      color: white;
+      padding: 14px 32px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 85, 170, 0.3);
+    }
+
+    .btn:hover {
+      background: #004080;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 85, 170, 0.4);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .rules {
+      background: rgba(250, 250, 250, 0.92);
+      border-left: 4px solid #d9534f;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.95rem;
+    }
+
+    .rules h3 {
+      color: #d9534f;
+      margin-bottom: 12px;
+    }
+
+    .rules ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .rules li::before {
+      content: "⚠️ ";
+      color: #d9534f;
+    }
+
+    footer {
+      text-align: center;
+      color: rgba(255,255,255,0.8);
+      padding: 30px 0;
+      font-size: 0.9rem;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    }
+
+    /* Страница оформления */
+    #checkout-page {
+      display: none;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #0055aa;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Главная страница -->
+  <div id="main-page">
+    <div class="container">
+      <header>
+        <h1>Админка СЗДР 25</h1>
+        <p>Официальный доступ к модерации и управлению контентом</p>
+      </header>
+
+      <div class="card">
+        <h2>Что даёт админка?</h2>
+        <ul>
+          <li>✅ Публикация постов от имени сообщества</li>
+          <li>✅ Присвоение статуса «Администратор СЗДР» в профиле</li>
+          <li>✅ Доступ к скрытой статистике (охват, вовлечённость)</li>
+          <li>✅ Возможность закреплять посты и управлять комментариями</li>
+          <li>✅ Поддержка через приватный канал техподдержки</li>
+          <li>✅ Бессрочный доступ (до нарушения правил)</li>
+        </ul>
+
+        <div class="center" style="margin-top: 30px;">
+          <h3>Стоимость: <strong>499 ₽</strong> (единоразово)</h3>
+          <p style="margin: 15px 0; color: #555;">Оплата принимается только после подтверждения личности и проверки репутации.</p>
+          <button id="buy-btn" class="btn">Купить админку</button>
+        </div>
+      </div>
+
+      <div class="card rules">
+        <h3>⚠️ Важно: основания для отзыва админки <em>без возврата средств</em></h3>
+        <ul>
+          <li>Размещение запрещённого контента (наркотики, экстремизм, порнография)</li>
+          <li>Спам, накрутка, накидывание лайков/репостов искусственными способами</li>
+          <li>Оскорбление участников, модераторов или администрации проекта</li>
+          <li>Попытка продажи или передачи доступа третьим лицам</li>
+          <li>Использование админки в коммерческих целях без согласования</li>
+          <li>Нарушение УК РФ, КоАП РФ или правил платформы (ВКонтакте и др.)</li>
+        </ul>
+        <p style="margin-top: 15px; font-style: italic; color: #888;">
+          Решение об отзыве принимается администрацией СЗДР единолично и не подлежит обжалованию.
+        </p>
+      </div>
+
+      <footer>
+        © 2025 СЗДР 25. Официальный проект. Все права защищены.<br>
+        Администрация оставляет за собой право изменять условия без предварительного уведомления.
+      </footer>
+    </div>
+  </div>
+
+  <!-- Страница оформления -->
+  <div id="checkout-page" class="container" style="display: none;">
+    <a href="#" class="back-link" id="back-btn">← Вернуться к описанию</a>
+
+    <div class="card">
+      <h2>Оформление доступа к админке СЗДР 25</h2>
+      <p style="margin: 15px 0;">Для продолжения требуется подтверждение личности и оплата.</p>
+
+      <div style="background: #f8f9fa; border-radius: 8px; padding: 20px; margin: 25px 0; text-align: center;">
+        <!-- Сюда ты вставишь iframe с формой оплаты -->
+        <p style="font-weight: 600; color: #0055aa; margin-bottom: 15px;">Форма оплаты и верификации</p>
+        <div style="height: 300px; display: flex; align-items: center; justify-content: center; background: #eee; border-radius: 6px; color: #666;">
+          [Ваш iframe с формой оплаты будет здесь]<br>
+          Например: <iframe src="..." width="100%" height="280"></iframe>
+        </div>
+        <p style="font-size: 0.9rem; margin-top: 10px; color: #777;">
+          После оплаты вы получите инструкцию по подключению и верификации в течение 24 часов.
+        </p>
+      </div>
+
+      <p style="color: #d9534f; font-weight: 600;">
+        ⚠️ Оплата не возвращается в случае нарушения правил (см. ниже).
+      </p>
+    </div>
+
+    <div class="card rules">
+      <h3>Правила использования (повторно)</h3>
+      <ul>
+        <li>Запрещено размещать запрещённый законом РФ контент.</li>
+        <li>Запрещена передача прав доступа третьим лицам.</li>
+        <li>Админка может быть отозвана без предупреждения при первом нарушении.</li>
+        <li>Оплата не подлежит возврату ни при каких обстоятельствах после активации.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('buy-btn').addEventListener('click', () => {
+      document.getElementById('main-page').style.display = 'none';
+      document.getElementById('checkout-page').style.display = 'block';
+      window.scrollTo(0, 0);
+    });
+
+    document.getElementById('back-btn').addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('checkout-page').style.display = 'none';
+      document.getElementById('main-page').style.display = 'block';
+      window.scrollTo(0, 0);
+    });
+  </script>
+
+</body>
+</html>
